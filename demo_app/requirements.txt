@@ -1,0 +1,5 @@
+Django==1.8.11
+django-crispy-forms==1.4.0
+django-reversion==1.8.7
+-e git+https://github.com/likaiguo/django-xadmin.git@django1.8#egg=django-xadmin
+six==1.10.0
