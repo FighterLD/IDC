@@ -1,4 +1,5 @@
 # coding:utf-8
+from __future__ import unicode_literals
 from xadmin import views
 import xadmin
 from xadmin.layout import Main, TabHolder, Tab, Fieldset, Row, Col, AppendedText, Side
@@ -41,7 +42,8 @@ xadmin.site.register(views.BaseAdminView, BaseSetting)
 class GlobalSetting(object):
     global_search_models = [Host, IDC]
     global_models_icon = {
-        Host: 'fa fa-laptop', IDC: 'fa fa-cloud'
+        Host: 'fa fa-laptop',
+        IDC: 'fa fa-cloud'
     }
     menu_style = 'default'  # 'accordion'
     site_title = u'好玩运维-CMDB'
@@ -76,12 +78,16 @@ class HostAdmin(object):
 
     def open_web(self, instance):
         return "<a href='http://%s' target='_blank'>Open</a>" % instance.ip
-    open_web.short_description = "Acts"
+
+    open_web.short_description = "Acts-操作"
     open_web.allow_tags = True
     open_web.is_column = True
 
-    list_display = ('name', 'idc', 'guarantee_date', 'service_type',
-                    'status', 'open_web', 'description')
+    list_display = ('name', 'ip', 'internal_ip',
+                    'brand', 'cpu', 'core_num', 'memory', 'hard_disk',
+                    'system', 'system_version', 'system_arch',
+                    'service_type',
+                    'status', 'description', 'idc',)
     list_display_links = ('name',)
 
     raw_id_fields = ('idc',)
@@ -89,7 +95,8 @@ class HostAdmin(object):
 
     search_fields = ['name', 'ip', 'description']
     list_filter = ['idc', 'guarantee_date', 'status', 'brand', 'model',
-                   'cpu', 'core_num', 'hard_disk', 'memory', ('service_type', xadmin.filters.MultiSelectFieldListFilter)]
+                   'cpu', 'core_num', 'hard_disk', 'memory',
+                   ('service_type', xadmin.filters.MultiSelectFieldListFilter)]
 
     list_quick_filter = ['service_type', {'field': 'idc__name', 'limit': 10}]
     list_bookmarks = [{'title': "Need Guarantee", 'query': {'status__exact': 2},
@@ -135,7 +142,8 @@ class HostAdmin(object):
     reversion_enable = True
 
     data_charts = {
-        "host_service_type_counts": {'title': u"Host service type count", "x-field": "service_type", "y-field": ("service_type",),
+        "host_service_type_counts": {'title': u"Host service type count",
+                                     "x-field": "service_type", "y-field": ("service_type",),
                               "option": {
             "series": {"bars": {"align": "center", "barWidth": 0.8, 'show': True}},
             "xaxis": {"aggregate": "count", "mode": "categories"},
