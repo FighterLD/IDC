@@ -5,7 +5,7 @@ from xadmin.layout import Main, TabHolder, Tab, Fieldset, Row, Col, AppendedText
 from xadmin.plugins.batch import BatchChangeAction
 from xadmin.plugins.inline import Inline
 
-from .models import IDC, Host, MaintainLog, HostGroup, AccessRecord
+from app.models import IDC, Host, MaintainLog, HostGroup, AccessRecord
 
 
 class MainDashboard(object):
@@ -44,7 +44,7 @@ class GlobalSetting(object):
         Host: 'fa fa-laptop', IDC: 'fa fa-cloud'
     }
     menu_style = 'default'  # 'accordion'
-    site_title = u'好玩运维-IDC'
+    site_title = u'好玩运维-CMDB'
     site_footer = '2012 - 2016 Haowan123,Inc.'
 xadmin.site.register(views.CommAdminView, GlobalSetting)
 

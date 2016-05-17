@@ -1,6 +1,7 @@
 # coding:utf-8
-import sys
 import os.path
+import sys
+
 
 gettext = lambda s: s
 
@@ -112,10 +113,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'demo.urls'
+ROOT_URLCONF = 'CMDB.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'demo.wsgi.application'
+WSGI_APPLICATION = 'CMDB.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

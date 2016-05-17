@@ -1,3 +1,6 @@
+# coding: utf-8
+from __future__ import unicode_literals
+
 from django.db import models
 
 
@@ -21,7 +24,7 @@ SERVICE_TYPES = (
 
 
 class IDC(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, verbose_name='我是中文')
     description = models.TextField()
 
     contact = models.CharField(max_length=32)
@@ -35,7 +38,7 @@ class IDC(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = u"IDC"
+        verbose_name = u"CMDB-中文"
         verbose_name_plural = verbose_name
 
 
@@ -54,7 +57,7 @@ class Host(models.Model):
     model = models.CharField(max_length=64)
     cpu = models.CharField(max_length=64)
     core_num = models.SmallIntegerField(choices=[(i * 2, "%s Cores" % (i * 2)) for i in range(1, 15)])
-    hard_disk = models.IntegerField()
+    hard_disk = models.IntegerField(verbose_name='硬盘大小')
     memory = models.IntegerField()
 
     system = models.CharField(u"System OS", max_length=32, choices=[(i, i) for i in (u"CentOS", u"FreeBSD", u"Ubuntu")])
@@ -62,6 +65,8 @@ class Host(models.Model):
     system_arch = models.CharField(max_length=32, choices=[(i, i) for i in (u"x86_64", u"i386")])
 
     create_time = models.DateField()
+    update_time = models.DateTimeField(verbose_name='更新时间')
+    update_time2 = models.DateTimeField()
     guarantee_date = models.DateField()
     service_type = models.CharField(max_length=32, choices=SERVICE_TYPES)
     description = models.TextField()
@@ -117,3 +122,7 @@ class AccessRecord(models.Model):
 
     def __unicode__(self):
         return "%s Access Record" % self.date.strftime('%Y-%m-%d')
+
+if __name__ == '__main__':
+    hosts = Host.objects.filter()
+    print hosts[0]
