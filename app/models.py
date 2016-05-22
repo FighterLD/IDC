@@ -88,7 +88,7 @@ class Host(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = u"Host"
+        verbose_name = u"Host主机"
         verbose_name_plural = verbose_name
 
 
@@ -105,7 +105,7 @@ class MaintainLog(models.Model):
                                                self.maintain_type, self.hard_type)
 
     class Meta:
-        verbose_name = u"Maintain Log"
+        verbose_name = u"Maintain Log操作日志"
         verbose_name_plural = verbose_name
 
 
@@ -130,7 +130,7 @@ class AccessRecord(models.Model):
     view_count = models.IntegerField()
 
     class Meta:
-        verbose_name = u"Access Record"
+        verbose_name = u"Access Record访问记录"
         verbose_name_plural = verbose_name
 
     def __unicode__(self):

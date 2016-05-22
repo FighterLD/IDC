@@ -32,4 +32,4 @@ def platform_info(name='likaiguo-mac-6', force_update=False):
 
 if __name__ == '__main__':
 
-    platform_info()
+    platform_info(name='likaiguo-12232')
