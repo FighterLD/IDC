@@ -83,7 +83,7 @@ class HostAdmin(object):
     open_web.allow_tags = True
     open_web.is_column = True
 
-    list_display = ('name', 'ip', 'internal_ip',
+    list_display = ('name', 'open_web', 'ip', 'internal_ip',
                     'brand', 'cpu', 'core_num', 'memory', 'hard_disk',
                     'system', 'system_version', 'system_arch',
                     'service_type',
