@@ -2,7 +2,7 @@
 '''
 Created on 2016年5月18日
 
-@author: likaiguo
+@author: liudong
 '''
 import platform
 import psutil
@@ -10,7 +10,7 @@ import psutil
 from app.models import Host
 
 
-def platform_info(name='likaiguo-mac-6', force_update=False):
+def platform_info(name='liudong-ubuntu', force_update=False):
     host = Host.objects.filter(name=name).first()
     if not host or force_update:
         if not host:

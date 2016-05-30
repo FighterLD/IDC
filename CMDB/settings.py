@@ -16,14 +16,36 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#        'NAME': os.path.join(PROJECT_ROOT, 'data.db'),                      # Or path to database file if using sqlite3.
+#        'USER': '',                      # Not used with sqlite3.
+#        'PASSWORD': '',                  # Not used with sqlite3.
+#        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+#        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+#    }
+#}
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#        'NAME': 'ops_test',                      # Or path to database file if using sqlite3.
+#        'USER': 'root',                      # Not used with sqlite3.
+#        'PASSWORD': 'qwer@123',                  # Not used with sqlite3.
+#        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+#        'PORT': 3306,                      # Set to empty string for default. Not used with sqlite3.
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(PROJECT_ROOT, 'data.db'),                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'ops_test',                      # Or path to database file if using sqlite3.
+        'USER': 'ops_test',                      # Not used with sqlite3.
+        'PASSWORD': 'haowan123ops',                  # Not used with sqlite3.
+        'HOST': '123.59.64.228',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': 3306,                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
